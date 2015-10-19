@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> </title>
+	<style type="text/css">
+
+		body{
+			margin: 0px;
+			padding: 0px;
+			background-color: rgb(220,220,220)
+		}
+		#contenedor{
+			width: 90%;
+			margin:auto;
+			background: rgb(250,250,250);
+			box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+			padding: 15px;
+		}
+		p{
+			text-align: justify;
+			font-family: sans-serif;
+			font-size: 11px;
+			color: rgb(100,100,100)
+		}
+
+		h1,h2,h3,h4{
+			margin: 0px;
+			padding: 0px;
+			color: rgb(50,50,50);
+			font-family: serif;
+		}
+
+		article p{
+			padding-left: 20px;
+		}
+		article {
+			border-bottom: 1px dashed grey;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+		h1{
+			font-size: 52px;
+			text-decoration: none;
+		}
+		header a{
+			text-decoration: none;
+		}
+		h2{
+			font-size: 18px;
+			text-decoration: underline;
+		}
+		#articulos{
+			width:65%;
+			float: left;
+		}
+		aside{
+			width: 30%;
+			float:right;
+			background: rgb(240,240,240);
+			padding:10px;
+			height: 100%;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="contenedor">
+
+		<header>
+			<a href="/"><h1>Mi blog</h1></a>
+			<h2>Peur</h2>
+
+		</header>
+		<section>
+			<div id="articulos">
+				{% block contenido %} {% endblock %}
+			</div>
+			<aside>
+				<h4>Historico</h4>
+				{% for month in months %}
+				<p><a href="{url 'blog.views.month' month.0 month.1}">{{ month.2 }}</a></p>
+				{% endfor %}
+				<h4>Sobre mi</h4>
+				<p>Lorem ipsum dolor sit amet, mea equidem lobortis mediocritatem ea, erant quando oratio et has, per no vidisse noluisse. Adhuc iriure eam ne, clita detracto deserunt ex mei. Mea nemore deterruisset et. Contentiones necessitatibus vis no, fabulas cotidieque instructior ea qui. No nec agam accusam, veri quaerendum comprehensam sed id, no alii ornatus scriptorem vim.</p>
+			</aside>
+		</section>
+		<div style="clear:both;"></div>
+		<footer>
+			(c) 2015 Cesar Cueva
+		</footer>
+	</div>
+</body>
+</html>
